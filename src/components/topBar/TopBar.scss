@@ -1,0 +1,40 @@
+.topbar_containter {
+    display: flex;
+    align-items: center;
+    height: 6.5em;
+    background-color: rgba(0,0,0,0.12);
+    box-sizing: border-box;
+    padding: 1em 5em;
+    position: relative;
+
+    .topbar_logo {
+        .topbar_logo_img {
+            width: 10em;
+        }
+    }
+
+    .topbar_content {
+        .topbar_content_list {
+            display: flex;    
+            padding-left: 0;
+            list-style: none;
+
+            .topbar_content_item {
+                margin-left: 3em;
+                color: white;
+                
+                a {
+                    text-decoration: none;
+                    color: white;
+                }
+            }
+        }
+    }
+
+    .topbar_menu {
+        margin-left: auto;
+        font-size: 2em;
+        color: white;
+        cursor: pointer;
+    }
+}
