@@ -31,7 +31,7 @@ function TopBar() {
                     <li className="topbar_content_item">
                         <a href="/#">CONTACT</a>
                     </li>
-                    <li className="topbar_content_item">
+                    <li className="topbar_content_item topbar_content_book_now">
                         <a href="/#">BOOK NOW</a>
                     </li>
                 </ul>

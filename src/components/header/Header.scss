@@ -3,10 +3,11 @@
     background-attachment: fixed;
     background-repeat: no-repeat;
     background-size: cover;
+    filter: brightness(90%);
 }
 
 .header_content_container {
-    padding: 10em;
+    padding: 10em 5em;
     display: flex;
     justify-content: center;
 
@@ -41,7 +42,8 @@
             background-color: white;
             border-radius: 3em;
             overflow: hidden;
-            width: 50%;
+            width: 100%;
+            
 
             input {
                 width: 100%;
@@ -77,7 +79,7 @@
             }
             
             .header_activities_icon{
-                font-size: 3em;
+                font-size: 2em;
             }
         }
     }

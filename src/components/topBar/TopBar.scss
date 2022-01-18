@@ -1,10 +1,10 @@
 .topbar_containter {
     display: flex;
     align-items: center;
-    height: 6.5em;
+    height: 5.5em;
     background-color: rgba(0,0,0,0.12);
     box-sizing: border-box;
-    padding: 1em 5em;
+    padding: 1em 4em;
     position: relative;
 
     .topbar_logo {
@@ -15,9 +15,11 @@
 
     .topbar_content {
         .topbar_content_list {
-            display: flex;    
+            font-size: 0.9em;
+            display: flex;   
             padding-left: 0;
             list-style: none;
+            margin: 0 2em;
 
             .topbar_content_item {
                 margin-left: 3em;
@@ -28,12 +30,24 @@
                     color: white;
                 }
             }
+
+            .topbar_content_book_now {
+                background-color: #ba71da;
+                border-radius: 15px;
+                width: 8em;
+                height: 2.5em;
+                margin-top: -1em;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                transform: translateY(0.5em);
+            }
         }
     }
 
     .topbar_menu {
         margin-left: auto;
-        font-size: 2em;
+        font-size: 1.8em;
         color: white;
         cursor: pointer;
     }

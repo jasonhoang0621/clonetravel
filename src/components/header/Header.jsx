@@ -15,10 +15,13 @@ function Header() {
                     <h1 className='header_content_header'>Search your next <span className='header_content_holiday'>Holiday</span></h1>
                     <h5 className='header_content_subheader'>CHECK OUR BEST PROMOTIONS</h5>
 
-                    <div className="header_search">
-                        <input type="text" className='header_content_input' placeholder='Chooose your Destination ...' />
-                        <FaSearch className='header_search_icon' />
-                    </div>
+
+                    <Col>
+                        <div className="header_search">
+                            <input type="text" className='header_content_input' placeholder='Chooose your Destination ...' />
+                            <FaSearch className='header_search_icon' />
+                        </div>
+                    </Col>
 
                     <div className="header_activities">
                         <Row className='gx-5'>
