@@ -1,0 +1,36 @@
+.horizontal_break_container {   
+    box-sizing: border-box;
+    background-position: center;
+    background-attachment: fixed;
+    
+    .horizontal_content {
+        box-sizing: inherit;
+        color: white;
+
+        h1 {
+            font-weight: bold;
+            font-size: 3em;
+
+            span {
+                text-decoration: underline;
+                text-decoration-color: #f76570;
+            }
+        }
+
+        div {
+            letter-spacing: 0.1em;
+            font-weight: 300;
+        }
+
+        a {
+            text-decoration: none;
+            color: #f76570;
+            background-color: white;
+            padding: 0.5em 1.5em;
+            border-radius: 30px;
+            letter-spacing: 0.1em;
+            font-weight: 300;
+            font-size: 0.9em;
+        }
+    }
+}

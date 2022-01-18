@@ -1,0 +1,57 @@
+.article_container {
+    display: flex;
+    margin: auto;
+    max-width: 80em;
+
+    .article_advertise {
+
+        .article_advertise_header {
+            color: #555555;
+            font-weight: bold;
+            margin: 0 0 1em 0;
+
+            span {
+                text-decoration: underline;
+                text-decoration-color: #14b9d5;
+            }
+        }
+
+        p {
+            color: #9a9a9a;
+            font-weight: 300;
+        }
+        
+        img {
+            width: 100%;
+            background-position: center;
+            object-fit: cover;
+        }
+
+        .article_price {
+            font-size: 2em;
+            margin: 1em 0; 
+            font-weight: 400;
+
+            .article_root_price {
+                text-decoration: line-through;
+                color: #dadada;
+            }
+
+            .article_per_person {
+                font-size: 0.5em;
+            }
+        }
+
+        a {
+            margin-top: 20em;
+            text-decoration: none;
+            color: white;
+            background-color: #1bbc9b;
+            padding: 0.7em 2em;
+            border-radius: 30px;
+            font-weight: 300;
+            letter-spacing: 0.1em;
+        }
+    }
+}
+

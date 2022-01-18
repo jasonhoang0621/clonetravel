@@ -4,7 +4,7 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 
 function Proposal() {
     return (
-        <div className="proposal_container p-5 pt-md-5 pb-md-5 pt-md-0 pe-md-0">
+        <div className="proposal_container p-5">
             <div className="proposal_header mb-5">
                 <div>OUR PROPOSALS</div>
                 <h2>OUR <span>DESTINATIONS</span></h2>
