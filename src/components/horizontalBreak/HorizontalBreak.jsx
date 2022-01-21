@@ -6,7 +6,7 @@ function HorizontalBreak(props) {
         <>
             {props.image.length === 1 ?
                 <div className='horizontal_break_container' style={{ backgroundImage: `url(${props.image[0]})` }}>
-                    <Row className="horizontal_content p-5">
+                    <Row className="horizontal_content p-5 gx-0">
                         <Col md={{ span: 6, offset: 3 }}>
                             <Row>
                                 <Col xs={12} md={6} className='text-start'>
@@ -21,7 +21,7 @@ function HorizontalBreak(props) {
                     </Row>
                 </div>
                 :
-                <Row>
+                <Row className='gx-0'>
                     <Col md={6} xs={12} className='horizontal_break_container' style={{ backgroundImage: `url(${props.image[0]})` }}>
                         <div className="horizontal_content p-5 text-center">
                             <div>01.LAST MINUTE</div>

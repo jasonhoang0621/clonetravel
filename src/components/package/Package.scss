@@ -95,6 +95,9 @@
                         h6 {
                             font-size: 0.9em;
                             font-weight: 400;
+                            color: #555555;
+                            margin-bottom: 0;
+                            letter-spacing: 0.1em;
                         }
 
                         span {
@@ -107,6 +110,9 @@
                     }
 
                     .package_item_price {
+                        display: flex;
+                        align-items: center;
+
                         h4 {
                             color: #555555;
                         }
@@ -130,10 +136,10 @@
 
         .package_item_link_detail {
             text-align: center;
+            margin-top: 2em;
 
             a {
                 text-decoration: none;
-                background-color: red;
                 color: white;
                 border-radius: 30px;
                 padding: 0.4em 1.2em;
@@ -141,4 +147,9 @@
             }
         }
     }
+}
+
+.package_seperator {
+    border-bottom: 1px solid #f1f1f1;
+    margin: 0.8em 0;
 }

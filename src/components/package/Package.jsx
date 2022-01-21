@@ -7,7 +7,7 @@ function Package() {
     const purpleGradientColor = 'linear-gradient(to right, #ba71da 0%, #da717b 100%)'
 
     return (
-        <div className="package_container mt-5 mb-5 p-5">
+        <div className="package_container mt-3 mb-3 p-5">
             <div className="package_header">
                 <h6>PROMOTIONS</h6>
                 <h2>OUR <span>PACKAGES</span></h2>
@@ -29,20 +29,22 @@ function Package() {
                                     <h6>Europe</h6>
                                 </div>
                             </div>
+                            <div className="package_seperator"></div>
                             <div className="package_item_price_info">
                                 <div className="package_item_price_category">
                                     <h6>CULTURAL</h6>
-                                    <h6>RELAX <span style={{ backgroundColor: yelloGradientColor }}>+ 1</span></h6>
+                                    <h6>RELAX <span style={{ background: yelloGradientColor }}>+ 1</span></h6>
                                 </div>
                                 <div className="package_item_price">
                                     <h4>700 $</h4>
                                 </div>
                             </div>
+                            <div className="package_seperator"></div>
                             <div className="package_item_description">
                                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ut efficitur ante. Donec dapibus dictum scelerisque.</p>
                             </div>
                             <div className="package_item_link_detail">
-                                <a href="/#">DETAILS</a>
+                                <a href="/#" style={{ background: yelloGradientColor }}>DETAILS</a>
                             </div>
                         </div>
                     </div>
@@ -63,20 +65,22 @@ function Package() {
                                     <h6>Asia</h6>
                                 </div>
                             </div>
+                            <div className="package_seperator"></div>
                             <div className="package_item_price_info">
                                 <div className="package_item_price_category">
                                     <h6>HISTORY</h6>
-                                    <h6>CULTURAL <span style={{ backgroundColor: redGradientColor }}>+ 1</span></h6>
+                                    <h6>CULTURAL <span style={{ background: redGradientColor }}>+ 1</span></h6>
                                 </div>
                                 <div className="package_item_price">
                                     <h4><span>1000</span> 600 $</h4>
                                 </div>
                             </div>
+                            <div className="package_seperator"></div>
                             <div className="package_item_description">
                                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ut efficitur ante. Donec dapibus dictum scelerisque.</p>
                             </div>
                             <div className="package_item_link_detail">
-                                <a href="/#">DETAILS</a>
+                                <a href="/#" style={{ background: redGradientColor }}>DETAILS</a>
                             </div>
                         </div>
                     </div>
@@ -97,20 +101,22 @@ function Package() {
                                     <h6>United Stated</h6>
                                 </div>
                             </div>
+                            <div className="package_seperator"></div>
                             <div className="package_item_price_info">
                                 <div className="package_item_price_category">
                                     <h6>SPORT</h6>
-                                    <h6>RELAX <span style={{ backgroundColor: purpleGradientColor }}>+ 1</span></h6>
+                                    <h6>RELAX <span style={{ background: purpleGradientColor }}>+ 1</span></h6>
                                 </div>
                                 <div className="package_item_price">
                                     <h4>400 $</h4>
                                 </div>
                             </div>
+                            <div className="package_seperator"></div>
                             <div className="package_item_description">
                                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ut efficitur ante. Donec dapibus dictum scelerisque.</p>
                             </div>
                             <div className="package_item_link_detail">
-                                <a href="/#">DETAILS</a>
+                                <a href="/#" style={{ background: purpleGradientColor }}>DETAILS</a>
                             </div>
                         </div>
                     </div>
