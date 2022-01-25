@@ -1,0 +1,173 @@
+.left_menu_overlay {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background-color: rgb(0, 0, 0);
+    opacity: 0.3;
+    z-index: 99;
+}
+
+.left_menu_container, .left_menu_mobile_container {
+    position: fixed;
+    right: -100%;
+    top: 0;
+    bottom: 0;
+    background-color: white;
+    width: 22em;
+    max-width: 100%;
+    z-index: 9999;
+    overflow-y: auto;
+    overflow-x: hidden;
+    transition: 0.5s;
+    z-index: 999;
+
+    .left_menu_close {
+        text-align: end;
+        font-size: 1.8em;
+        color: #a3a3a3;
+        padding: 0 0.3em 0 0;
+        
+        .left_menu_close_icon {
+            cursor: pointer;
+        }
+    }
+
+    .left_menu_best_package, .left_menu_last_access {
+        margin: 0;
+        
+        .best_package_header, .last_access_header {
+            text-align: center;
+            
+            h6 {
+                color: #9a9a9a;
+            }
+
+            h4 {
+                font-weight: bold;
+                position: relative;
+                display: inline-block;
+                color: #555555;
+
+                &::after {
+                    content: '';
+                    border-top: 5px solid #ffd105;
+                    width: 100%;
+                    position: absolute;
+                    bottom: 0.2em;
+                    left: 0;
+                    z-index: -1;
+                }
+            }
+        }
+
+        .last_access_header {
+            h4 {
+                &::after {
+                    border-top: 5px solid rgb(119, 221, 119);
+                }  
+            }
+        }
+
+        .left_menu_suggestion {
+            .left_menu_suggestion_card {
+                padding: 2em;
+                display: flex;
+
+                .left_menu_suggestion_card_image {
+                    flex: 4;
+                    text-align: center;
+
+                    img {    
+                        object-fit: contain;
+                        width: 100%;
+                    }
+                }
+                
+                .left_menu_suggestion_card_info {
+                    flex: 6;
+                    margin-left: 1.8em;
+
+                    h5 {
+                        color: #555555;
+                        font-weight: 400;
+                        margin: 0 0 0.2em 0;
+                    }
+
+                    .left_menu_suggestion_card_location {
+                        display: flex;
+
+                        img {
+                            height: 1em;
+                            object-fit: contain;
+                        }
+
+                        h6 {
+                            margin-left: 0.2em;
+                            color: #9a9a9a;
+                            font-weight: 400;
+                            letter-spacing: 0.12em;
+                        }
+                    }
+
+                    a {
+                        margin-top: 0.5em;
+                        display: inline-block;
+                        text-decoration: none;
+                        color: white;
+                        border-radius: 30px;
+                        padding: 0.2em 1em;
+                        font-size: 0.9em;
+                        letter-spacing: 0.05em;
+                    }
+                }
+            }
+        }
+    }
+
+    .left_menu_last_access {
+        margin-top: 2em;
+    }
+}
+
+.left_menu_mobile_container {
+    display: none;
+}
+
+.left_menu_show {
+    right: 0;
+}
+
+@media (max-width: 1200px) {
+    .left_menu_container {
+        display: none;
+    }
+
+    .left_menu_mobile_container {
+        display: block;
+        background-color: #555555;
+
+        .left_menu_mobile_list {
+            ul {
+                margin-top: 1em;
+                list-style: none;
+                
+                li {
+                    padding: 1em 0;
+                    
+                    a {
+                        text-decoration: none;
+                        color: white;
+                        letter-spacing: 0.2em;
+
+                        &:hover {
+                            opacity: 0.3;
+                        }
+                    }
+                }
+            }
+        }
+    }
+        
+}

@@ -1,9 +1,9 @@
 import './TopBar.scss'
 import { FaBars } from 'react-icons/fa'
 
-function TopBar() {
+function TopBar(props) {
     return (
-        <div className="topbar_containter">
+        <div className="topbar_container">
             <div className="topbar_logo">
                 <img className='topbar_logo_img' src="./assets/logo/logo.png" alt="Top bar logo" />
             </div>
@@ -37,8 +37,8 @@ function TopBar() {
                 </ul>
             </div>
 
-            <div className="topbar_menu">
-                <FaBars />
+            <div className="topbar_menu" >
+                <FaBars onClick={props.openLeftMenu} />
             </div>
         </div>
     )

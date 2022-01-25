@@ -6,9 +6,11 @@ import Package from "../components/package/Package";
 import Footer from "../components/footer/Footer";
 
 function Home() {
+
+
     return (
         <>
-            <Header />
+            <Header/>
             <Proposal />
             <HorizontalBreak image={['./assets/image/parallax-search-2.jpg']} />
             <Article />

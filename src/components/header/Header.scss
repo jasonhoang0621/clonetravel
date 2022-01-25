@@ -3,7 +3,7 @@
     background-attachment: fixed;
     background-repeat: no-repeat;
     background-size: cover;
-    filter: brightness(90%);
+    filter: brightness(95%);
 }
 
 .header_content_container {
@@ -15,7 +15,6 @@
         display: flex;
         flex-flow: column;
         align-items: center;
-
 
         .header_content_header {
             font-size: 3em;
@@ -62,7 +61,7 @@
     .header_activities {
         margin-top: 4em;
 
-        .header_actitivities_item {
+        .header_activities_item {
             display: flex;
             flex-flow: column;
             align-items: center;

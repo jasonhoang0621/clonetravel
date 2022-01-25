@@ -1,4 +1,4 @@
-.topbar_containter {
+.topbar_container {
     display: flex;
     align-items: center;
     height: 5.5em;
@@ -20,6 +20,7 @@
             padding-left: 0;
             list-style: none;
             margin: 0 2em;
+            letter-spacing: 0.1em;
 
             .topbar_content_item {
                 margin-left: 3em;
@@ -41,6 +42,7 @@
                 align-items: center;
                 justify-content: center;
                 transform: translateY(0.5em);
+                min-width: 10em;
             }
         }
     }
@@ -50,5 +52,17 @@
         font-size: 1.8em;
         color: white;
         cursor: pointer;
+        user-select: none;
     }
+}
+
+@media (max-width: 1200px) {
+    .topbar_container {
+        padding: 1em 1em;
+
+        .topbar_content {
+            display: none;
+        }
+    }
+        
 }
