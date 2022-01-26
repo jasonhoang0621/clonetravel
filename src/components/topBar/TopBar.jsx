@@ -15,6 +15,21 @@ function TopBar(props) {
                     </li>
                     <li className="topbar_content_item">
                         <a href="/#">PACKAGES</a>
+                        <ul className='topbar_item_root_list'>
+                            <li>Search 1 <span>HOT</span></li>
+                            <li>Search 2</li>
+                            <li>
+                                Tour Package
+                                <ul className='topbar_item_children_list'>
+                                    <li>Carousel <span>BEST</span></li>
+                                    <li>Custom Map</li>
+                                    <li>360° Panorama</li>
+                                    <li>Default</li>
+                                </ul>
+                            </li>
+                            <li>Destination</li>
+                            <li>Typology</li>
+                        </ul>
                     </li>
                     <li className="topbar_content_item">
                         <a href="/#">SHOP</a>

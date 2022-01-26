@@ -1,5 +1,6 @@
 import './LeftMenu.scss'
 import { FaRegTimesCircle } from 'react-icons/fa'
+import Destination from '../../destination/Destination'
 
 function LeftMenu(props) {
     const suggestion = [
@@ -79,6 +80,10 @@ function LeftMenu(props) {
                             </div>
                         ))}
                     </div>
+                </div>
+
+                <div className="left_menu_proposal">
+                    <Destination proposal={{ image: './assets/image/destination-8.jpg', name: 'Italy', packages: ['Hong Kong', 'Phu Ket'] }} />
                 </div>
 
                 <div className="left_menu_last_access">
