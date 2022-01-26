@@ -5,7 +5,6 @@
     background-color: rgba(0,0,0,0.12);
     box-sizing: border-box;
     padding: 1em 4em;
-    position: relative;
 
     .topbar_logo {
         .topbar_logo_img {
@@ -23,9 +22,10 @@
             letter-spacing: 0.1em;
 
             .topbar_content_item {
-                margin-left: 3em;
+                margin-left: 2em;
                 color: white;
                 position: relative;
+                padding: 1.5em 0;
                 
                 a {
                     text-decoration: none;
@@ -37,41 +37,81 @@
                     display: none;
                 }
 
-                &:hover {
-                    .topbar_item_root_list {
-                        display: block;
-                        position: absolute;
-                        list-style: none;
-                        padding: 0;
-                        cursor: pointer;
-                        background-color: white;
-                        box-shadow: 0px 2px 5px #f1f1f1;
-                        color: #a3a3a3;
+                .topbar_item_root_list {
+                    display: none;
+                    list-style: none;
+                    position: absolute;
+                    top: 100%;
+                    left: 0;
+                    padding: 0;
+                    cursor: pointer;
+                    background-color: white;
+                    box-shadow: 0px 2px 5px #f1f1f1;
+                    color: #a3a3a3;
+                    font-weight: 300;
+                    letter-spacing: 0.1em;
 
-                        li {
-                            padding: 1em 2em;
-                            border-bottom: 1px solid #a3a3a3;
+                    li {
+                        padding: 1em 1.5em;
+                        border-bottom: 1px solid #f1f1f1;
+                        width: 13em;
+                        position: relative;
+
+                        .topbar_item_root_badge {
+                            background-color: #f76570;
+                            margin-left: 1.4em;
+                            color: white;
+                            border-radius: 3px;
+                            font-size: 0.7em;
+                            padding: 0.2em 0.7em;
+                        }
+
+                        .topbar_item_children_list {
+                            position: absolute;
+                            display: none;
+                            left: calc(100% + 1em);
+                            top: 0;
+                            background-color: white;
+                            list-style: none;
+                            padding: 0;
                             width: 13em;
 
+                            li {
+                                width: 100%;
+                            }
+
                             span {
-                                background-color: red;
-                                margin-left: 1em;
+                                background-color:#14b9d5;
+                                margin-left: 0.5em;
+                                color: white;
+                                border-radius: 3px;
+                                font-size: 0.7em;
+                                padding: 0.2em 0.7em;
                             }
 
-                            &:hover {
-                                opacity: 0.3;
-                            }
-
-                            &:hover {
-                                .topbar_item_children_list {
-                                    display: block;
-                                    position: absolute;
-                                    
-                                }
+                            &::before {
+                                content: '';
+                                position: absolute;
+                                top: 0;
+                                left: -1em;
+                                width: 1em;
+                                height: 100%;
                             }
                         }
 
-                        
+                        &:hover {
+                            background-color: #f9f9f9;
+
+                            .topbar_item_children_list {
+                                display: block;
+                            }
+                        }
+                    }
+                }
+                
+                &:hover {
+                    .topbar_item_root_list {
+                        display: block;
                     }
                 }
             }
@@ -81,7 +121,6 @@
                 border-radius: 30px;
                 width: 8em;
                 height: 2.5em;
-                margin-top: -1em;
                 display: flex;
                 align-items: center;
                 justify-content: center;
