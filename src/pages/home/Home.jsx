@@ -1,13 +1,12 @@
 import './Home.scss'
 
-import Header from "../components/header/Header";
-import Destination from "../destination/Destination";
-import HorizontalBreak from "../components/horizontalBreak/HorizontalBreak";
-import Article from "../components/article/Article";
-import Package from "../components/package/Package";
-import Footer from "../components/footer/Footer";
+import Destination from "../../destination/Destination";
+import HorizontalBreak from "../../components/horizontalBreak/HorizontalBreak";
+import Article from "../../components/article/Article";
+import Package from "../../components/package/Package";
 
 import { Col, Row } from 'react-bootstrap'
+import Header from '../../components/header/Header';
 
 function Home() {
     const proposal = [
@@ -84,7 +83,7 @@ function Home() {
 
     return (
         <>
-            <Header />
+            <Header home={true} />
             <div className="proposal_container p-5">
                 <div className="proposal_header mb-5">
                     <div>OUR PROPOSALS</div>
@@ -119,8 +118,6 @@ function Home() {
                     })}
                 </Row>
             </div>
-
-            <Footer />
         </>
     )
 }
