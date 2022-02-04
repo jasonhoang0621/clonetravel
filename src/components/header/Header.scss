@@ -133,17 +133,130 @@
                 }
 
                 .header_search_filter_section_input {
+                    position: relative;
                     margin-top: 0.5em;
+
+                    select {
+                        //remove arrow down of select tag
+                        -webkit-appearance: none;
+                        -moz-appearance: none;
+
+                        border-radius: 30px;
+                        background-color: #f9f9f9;
+                        border: 1px solid #f1f1f1;
+                        display: flex;
+                        justify-content: space-between;
+                        color: #a3a3a3;
+                        outline:  none;
+                        width: 100%;
+                        padding: 0.5em 2em;
+                        cursor: pointer;
+                    }
+
+                    .header_search_filter_section_input_icon {
+                        position: absolute;
+                        right: 2em;
+                        top: 0.5em;
+                        color: #a3a3a3;
+                    }
+                }
+
+                .header_search_filter_section_date {
+                    position: relative;
                     border-radius: 30px;
                     background-color: #f9f9f9;
                     border: 1px solid #f1f1f1;
                     display: flex;
                     justify-content: space-between;
-                    color: #a3a3a3;       
+                    color: #a3a3a3;
+                    outline:  none;
+                    width: 100%;
                     padding: 0.5em 2em;
-                    user-select: none;
-                    cursor: pointer;  
+                    cursor: pointer;
+
+                    .header_search_filter_section_date_input {
+                        width: 100%;
+
+                        .header_search_filter_section_input_icon {
+                            position: absolute;
+                            right: 2em;
+                            top: 0.5em;
+                            color: #a3a3a3;
+                        }
+                    }
+
+                    
+
+                    .header_search_filter_section_date_calender {
+                        position: absolute;
+                        bottom: -1em;
+                        transform: translateY(100%);
+                        left: 0;
+                        background-color: #555555;
+                        z-index: 2;
+                        width: 100%;
+                        user-select: none;
+
+                        .header_search_filter_section_date_calender_top {
+                            display: flex;
+                            justify-content: space-around;
+                            padding: 1em 0;
+                            background-color: #5d5d5d;
+
+                            button {
+                                outline: none;
+                                border: none;
+                                color: #878787;
+                                background-color: #555555;
+                                font-size: 0.6em;
+                                letter-spacing: 0.2em;
+                                padding: 0 0.2em;
+                            }
+
+                            .header_search_filter_section_date_calender_top_header {
+                                font-size: 0.8em;
+                                color: white;
+                            }
+                        }
+
+                        .header_search_filter_section_date_calender_table {
+                            width: 100%; 
+                            font-size: 0.8em;
+
+                            thead {
+                                tr {
+                                    th {
+                                        font-weight: 400;
+                                        text-align: center;
+                                    }
+                                }
+                            }
+
+                            tbody {
+                                margin: 0.2em 0.2em;
+                                tr {
+
+                                    th {
+                                        font-weight: 200;
+                                        color: #fff;
+                                        text-align: center;
+                                        padding: 0.5em 0.2em;
+                                    }
+
+                                    .calender_passed_days {
+                                        color: #a3a3a3;
+                                    }
+
+                                    .calender_current_day {
+                                        background-color: #1bbc9b;
+                                    }
+                                }
+                            }
+                        }
+                    }
                 }
+
+                
 
                 .header_search_filter_price {
                     .header_search_filter_price_current {
@@ -158,7 +271,7 @@
 
                     h6 {
                         font-weight: 300;
-                        margin-left: 2em;
+                        margin-left: 1em;
                     }
                 }
             }
@@ -174,6 +287,7 @@
                 border-radius: 15px;
                 letter-spacing: 0.1em;
                 font-size: 0.9em;
+                letter-spacing: 0.1em;
             }
         }
 
@@ -184,18 +298,71 @@
             justify-content: space-between;
 
             .header_options_section {
-                
-                span {       
+                .header_options_section_item {
+                    position: relative;
                     font-weight: 300;
+                    letter-spacing: 0.1em;
+                    font-size: 0.9em;
 
                     &:last-child {
                         margin-left: 2em;
                     }
+    
+                    .header_option_filter {
+                        color: #a3a3a3;
+                        position: absolute;
+                        bottom: -1em;
+                        transform: translateY(100%);
+                        left: 0;
+                        width: 10em;
+                        display: none;
+
+                        &::before {
+                            content: '';
+                            position: absolute;
+                            width: 100%;
+                            height: 1em;
+                            top: -1em;
+                            left: 0;
+                        }
+
+                        
+                        ul {
+                            list-style: none;
+                            padding: 0;
+                            margin: 0;
+                            
+                            li {
+                                background-color: #5d5d5d;
+                                text-align: center;
+                                font-weight: 300;
+                                font-size: 0.8em;
+                                padding: 0.8em 0;
+                                cursor: pointer;
+
+                                &:last-child {
+                                    background-color: #555555;
+                                }
+                            }
+                        }
+                    }
+
+                    &:hover {
+                        .header_option_filter {
+                            display: block;
+                        }
+                    }
                 }
 
+                .unselected_item {
+                    color: #9a9a9a;
+                }
+                
                 &:last-child {
                     font-size: 1.5em;
-                    cursor: pointer;
+                    span {
+                        cursor: pointer;
+                    }
                 }
             }
         }
