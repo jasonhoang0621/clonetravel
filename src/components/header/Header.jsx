@@ -56,6 +56,9 @@ function Header(props) {
     const openLeftMenu = () => setLeftMenu(true)
     const closeLeftMenu = () => setLeftMenu(false)
 
+    //search 1
+    const [maxPrice, setMaxPrice] = useState(0)
+
     //calender
     const [isShowCalender, setIsShowCalender] = useState(false)
     const [day, setDay] = useState(Calender.currentDay)
@@ -141,13 +144,13 @@ function Header(props) {
                 <div className="header_container" style={{ backgroundImage: 'url(./assets/image/parallax-search-2.jpg)' }}>
                     <TopBar openLeftMenu={openLeftMenu} />
 
-                    <div className="header_search_content">
+                    <div className="header_search_content p-md-5 p-0 m-md-5 m-3">
                         <h6 className='header_content_search1_subheader'>OUR PACKAGES</h6>
                         <h1 className='header_content_search1_header'>Search your <span>Holiday</span></h1>
 
-                        <div className="header_search_filter">
+                        <div className="header_search_filter ">
                             <Row>
-                                <Col md={4} className='justify-content-center d-flex'>
+                                <Col md={4} className='justify-content-center d-flex mt-0 mt-md-0'>
                                     <div className="header_search_filter_section">
                                         <h6>Select Your Destination</h6>
                                         <div className="header_search_filter_section_input">
@@ -166,7 +169,7 @@ function Header(props) {
 
                                     </div>
                                 </Col>
-                                <Col md={4} className='justify-content-center d-flex'>
+                                <Col md={4} className='justify-content-center d-flex mt-5 mt-md-0'>
                                     <div className="header_search_filter_section">
                                         <h6>Select Your Date</h6>
                                         <div className='header_search_filter_section_date'>
@@ -214,14 +217,14 @@ function Header(props) {
 
                                     </div>
                                 </Col>
-                                <Col md={4} className='justify-content-center d-flex'>
+                                <Col md={4} className='justify-content-center d-flex mt-5 mt-md-0'>
                                     <div className="header_search_filter_section">
                                         <div className="header_search_filter_price d-flex justify-content-between">
                                             <h6>Max Price:</h6>
-                                            <h6 className="header_search_filter_price_current">5000 $</h6>
+                                            <h6 className="header_search_filter_price_current">{maxPrice} $</h6>
                                         </div>
 
-                                        <input type="range" className='mt-3' />
+                                        <input type="range" min={0} max={10000} value={maxPrice} onChange={event => setMaxPrice(event.target.value)} className='mt-3' />
 
                                         <div className="header_search_filter_promotion d-flex mt-3">
                                             <input type="checkbox" />
@@ -237,7 +240,7 @@ function Header(props) {
                         </div>
 
                         <div className="header_options">
-                            <div className="header_options_section">
+                            <div className="header_options_section mb-5">
                                 <span className='header_options_section_item'>
                                     PRICE <FaAngleDown />
                                     <div className="header_option_filter">
@@ -264,6 +267,28 @@ function Header(props) {
                         </div>
                     </div>
                 </div >}
+
+            {props.carousel &&
+                <div className="header_container" style={{ backgroundImage: 'url(/assets/image/parallax-15.jpg)' }}>
+                    <TopBar openLeftMenu={openLeftMenu} />
+
+                    <div className="header_carousel_content_container m-5 p-md-5 pb-5">
+                        <div className="header_content">
+                            <h1 className='header_content_header'>San Francisco</h1>
+                            <div className="header_content_subheader">
+                                <div className="header_content_subheader_item">
+                                    <img src="/assets/icon/icon-pin-grey.png" alt="location" />
+                                    <span>UNITED STATES</span>
+                                </div>
+                                <div className="header_content_subheader_item">
+                                    <img src="/assets/icon/icon-time-white.png" alt="time" />
+                                    <span>9-12 DAYS</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
 
 
             <LeftMenu closeLeftMenu={closeLeftMenu} leftMenu={leftMenu} />

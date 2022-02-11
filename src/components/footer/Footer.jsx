@@ -3,8 +3,9 @@ import { Row, Col } from 'react-bootstrap'
 import { FaTwitter, FaYoutube, FaFacebook, FaGithub } from 'react-icons/fa'
 
 function Footer() {
+
     return (
-        <div className="footer" style={{ backgroundImage: 'url(./assets/image/parallax-7.jpg)' }}>
+        <div className="footer" style={{ backgroundImage: 'url(/assets/image/parallax-7.jpg)' }}>
             <div className="footer_container mt-md-5 mb-md-5 p-5">
                 <div className="footer_email">
                     <Row>

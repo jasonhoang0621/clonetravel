@@ -6,7 +6,7 @@ function TopBar(props) {
     return (
         <div className="topbar_container">
             <div className="topbar_logo">
-                <img className='topbar_logo_img' src="./assets/logo/logo.png" alt="Top bar logo" />
+                <img className='topbar_logo_img' src="/assets/logo/logo.png" alt="Top bar logo" />
             </div>
 
             <div className="topbar_content">
@@ -18,7 +18,7 @@ function TopBar(props) {
                         <Link to='/search-1'>PACKAGES</Link>
                         <ul className='topbar_item_root_list'>
                             <li><Link to='/search-1'>Search 1 <span className='topbar_item_root_badge'>HOT</span></Link></li>
-                            <li><Link to='/search-2'>Search 2</Link></li>
+                            <li><Link to='/search-1'>Search 2</Link></li>
                             <li>
                                 <Link to='tour-packages'>Tour Package <span><FaAngleRight /></span></Link>
                                 <ul className='topbar_item_children_list'>

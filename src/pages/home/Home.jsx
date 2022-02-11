@@ -1,6 +1,6 @@
 import './Home.scss'
 
-import Destination from "../../destination/Destination";
+import Destination from '../../components/destination/Destination'
 import HorizontalBreak from "../../components/horizontalBreak/HorizontalBreak";
 import Article from "../../components/article/Article";
 import Package from "../../components/package/Package";

@@ -1,6 +1,6 @@
 import './LeftMenu.scss'
 import { FaRegTimesCircle } from 'react-icons/fa'
-import Destination from '../../destination/Destination'
+import Destination from '../destination/Destination'
 
 function LeftMenu(props) {
     const suggestion = [
@@ -67,12 +67,12 @@ function LeftMenu(props) {
                         {suggestion.map((item, index) => (
                             <div className="left_menu_suggestion_card" key={index}>
                                 <div className="left_menu_suggestion_card_image">
-                                    <img src={`./assets/image/${item.image}`} alt="packageImage" />
+                                    <img src={`/assets/image/${item.image}`} alt="packageImage" />
                                 </div>
                                 <div className="left_menu_suggestion_card_info">
                                     <h5>{item.name}</h5>
                                     <div className="left_menu_suggestion_card_location">
-                                        <img src="./assets/icon/icon-pin-grey.png" alt="location" />
+                                        <img src="/assets/icon/icon-pin-grey.png" alt="location" />
                                         <h6>{item.location}</h6>
                                     </div>
                                     <a href="/#" style={{ background: item.color }}>FROM {item.price} $</a>
@@ -83,7 +83,7 @@ function LeftMenu(props) {
                 </div>
 
                 <div className="left_menu_proposal">
-                    <Destination proposal={{ image: './assets/image/destination-8.jpg', name: 'Italy', packages: ['Hong Kong', 'Phu Ket'] }} />
+                    <Destination proposal={{ image: '/assets/image/destination-8.jpg', name: 'Italy', packages: ['Hong Kong', 'Phu Ket'] }} />
                 </div>
 
                 <div className="left_menu_last_access">
@@ -95,12 +95,12 @@ function LeftMenu(props) {
                         {lastAccess.map((item, index) => (
                             <div className="left_menu_suggestion_card" key={index}>
                                 <div className="left_menu_suggestion_card_image">
-                                    <img src={`./assets/image/${item.image}`} alt="packageImage" />
+                                    <img src={`/assets/image/${item.image}`} alt="packageImage" />
                                 </div>
                                 <div className="left_menu_suggestion_card_info">
                                     <h5>{item.name}</h5>
                                     <div className="left_menu_suggestion_card_location">
-                                        <img src="./assets/icon/icon-pin-grey.png" alt="location" />
+                                        <img src="/assets/icon/icon-pin-grey.png" alt="location" />
                                         <h6>{item.location}</h6>
                                     </div>
                                     <a href="/#" style={{ background: item.color }}>FROM {item.price} $</a>
