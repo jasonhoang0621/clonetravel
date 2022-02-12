@@ -3,7 +3,7 @@ import Header from '../../components/header/Header';
 import { Row, Col } from 'react-bootstrap'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { Pagination, Navigation, Autoplay } from 'swiper'
-import { FaCheck, FaTimes, FaPlusSquare } from 'react-icons/fa'
+import { FaCheck, FaTimes, FaPlusSquare, FaMinusSquare } from 'react-icons/fa'
 
 // Import Swiper styles
 import "swiper/css";
@@ -308,59 +308,63 @@ function Carousel() {
                         <div className="carousel_nav_program_list">
                             <div className="carousel_nav_program_item" >
                                 <div className="d-flex">
-                                    <FaPlusSquare className='carousel_nav_program_item_icon' onClick={() => changeStatePopUp(0)} />
+                                    {programPopUp[0] ?
+                                        <FaMinusSquare className='carousel_nav_program_item_icon' onClick={() => changeStatePopUp(0)} />
+                                        :
+                                        <FaPlusSquare className='carousel_nav_program_item_icon' onClick={() => changeStatePopUp(0)} />}
                                     <span>DAY 1</span> - Departure at the airport and arrival at the hotel
                                 </div>
-                                {programPopUp[0] &&
-                                    <div className="carousel_nav_program_item_popup">
-                                        Lorem commodo lectus at sollicitudin elementum. Sed dolor turpis, condimentum sit amet maximus sit amet, rhoncus non turpis.
-                                    </div>
-                                }
-
+                                <div className={`carousel_nav_program_item_popup ${programPopUp[0] && 'show'}`}>
+                                    Lorem commodo lectus at sollicitudin elementum. Sed dolor turpis, condimentum sit amet maximus sit amet, rhoncus non turpis.
+                                </div>
                             </div>
                             <div className="carousel_nav_program_item">
                                 <div className="d-flex">
-                                    <FaPlusSquare className='carousel_nav_program_item_icon' onClick={() => changeStatePopUp(1)} />
+                                    {programPopUp[1] ?
+                                        <FaMinusSquare className='carousel_nav_program_item_icon' onClick={() => changeStatePopUp(1)} />
+                                        :
+                                        <FaPlusSquare className='carousel_nav_program_item_icon' onClick={() => changeStatePopUp(1)} />}
                                     <span>DAY 2</span> - Visit the main museums and lunch included
                                 </div>
-                                {programPopUp[1] &&
-                                    <div className="carousel_nav_program_item_popup">
-                                        Lorem commodo lectus at sollicitudin elementum. Sed dolor turpis, condimentum sit amet maximus sit amet, rhoncus non turpis.
-                                    </div>
-                                }
+                                <div className={`carousel_nav_program_item_popup ${programPopUp[1] && 'show'}`}>
+                                    Lorem commodo lectus at sollicitudin elementum. Sed dolor turpis, condimentum sit amet maximus sit amet, rhoncus non turpis.
+                                </div>
                             </div>
                             <div className="carousel_nav_program_item">
                                 <div className="d-flex">
-                                    <FaPlusSquare className='carousel_nav_program_item_icon' onClick={() => changeStatePopUp(2)} />
+                                    {programPopUp[2] ?
+                                        <FaMinusSquare className='carousel_nav_program_item_icon' onClick={() => changeStatePopUp(2)} />
+                                        :
+                                        <FaPlusSquare className='carousel_nav_program_item_icon' onClick={() => changeStatePopUp(2)} />}
                                     <span>DAY 3</span> - Excursion in the natural oasis and picnic
                                 </div>
-                                {programPopUp[2] &&
-                                    <div className="carousel_nav_program_item_popup">
-                                        Lorem commodo lectus at sollicitudin elementum. Sed dolor turpis, condimentum sit amet maximus sit amet, rhoncus non turpis.
-                                    </div>
-                                }
+                                <div className={`carousel_nav_program_item_popup ${programPopUp[2] && 'show'}`}>
+                                    Lorem commodo lectus at sollicitudin elementum. Sed dolor turpis, condimentum sit amet maximus sit amet, rhoncus non turpis.
+                                </div>
                             </div>
                             <div className="carousel_nav_program_item">
                                 <div className="d-flex">
-                                    <FaPlusSquare className='carousel_nav_program_item_icon' onClick={() => changeStatePopUp(3)} />
+                                    {programPopUp[3] ?
+                                        <FaMinusSquare className='carousel_nav_program_item_icon' onClick={() => changeStatePopUp(3)} />
+                                        :
+                                        <FaPlusSquare className='carousel_nav_program_item_icon' onClick={() => changeStatePopUp(3)} />}
                                     <span>DAY 4</span> - Excursion in the natural oasis and picnic
                                 </div>
-                                {programPopUp[3] &&
-                                    <div className="carousel_nav_program_item_popup">
-                                        Lorem commodo lectus at sollicitudin elementum. Sed dolor turpis, condimentum sit amet maximus sit amet, rhoncus non turpis.
-                                    </div>
-                                }
+                                <div className={`carousel_nav_program_item_popup ${programPopUp[3] && 'show'}`}>
+                                    Lorem commodo lectus at sollicitudin elementum. Sed dolor turpis, condimentum sit amet maximus sit amet, rhoncus non turpis.
+                                </div>
                             </div>
                             <div className="carousel_nav_program_item">
                                 <div className="d-flex">
-                                    <FaPlusSquare className='carousel_nav_program_item_icon' onClick={() => changeStatePopUp(4)} />
+                                    {programPopUp[4] ?
+                                        <FaMinusSquare className='carousel_nav_program_item_icon' onClick={() => changeStatePopUp(4)} />
+                                        :
+                                        <FaPlusSquare className='carousel_nav_program_item_icon' onClick={() => changeStatePopUp(4)} />}
                                     <span>DAY 5</span> - Lorem ipsum dolor sit amet, consectetur adipiscing
                                 </div>
-                                {programPopUp[4] &&
-                                    <div className="carousel_nav_program_item_popup">
-                                        Lorem commodo lectus at sollicitudin elementum. Sed dolor turpis, condimentum sit amet maximus sit amet, rhoncus non turpis.
-                                    </div>
-                                }
+                                <div className={`carousel_nav_program_item_popup ${programPopUp[4] && 'show'}`}>
+                                    Lorem commodo lectus at sollicitudin elementum. Sed dolor turpis, condimentum sit amet maximus sit amet, rhoncus non turpis.
+                                </div>
                             </div>
                         </div>
                     </div>}

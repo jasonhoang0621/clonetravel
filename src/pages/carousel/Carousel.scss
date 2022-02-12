@@ -284,7 +284,7 @@
                 margin-top: 2em;
 
                 .carousel_nav_program_item {
-                    margin-bottom: 1em;
+
                     .carousel_nav_program_item_icon {
                         color: rgb(247, 101, 112);
                         font-size: 1.7em;
@@ -299,8 +299,16 @@
                     }
 
                     .carousel_nav_program_item_popup {
-                        margin: 0.5em 0 0 3em;
-                        animation: topLeft ease-out 1s;
+                        margin: 0.5em 0 0.5em 3em;
+                        height: 0em;
+                        opacity: 0;
+                        transition: height ease 0.8s, opacity ease 0.8s;
+                    }
+                    
+                    .carousel_nav_program_item_popup.show {
+                        animation: topLeft ease-out 0.8s;
+                        height: 2em;
+                        opacity: 1;
                     }
                 }   
             }   
