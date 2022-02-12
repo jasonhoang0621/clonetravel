@@ -2,8 +2,8 @@ import './Carousel.scss'
 import Header from '../../components/header/Header';
 import { Row, Col } from 'react-bootstrap'
 import { Swiper, SwiperSlide } from 'swiper/react'
-import { Pagination } from 'swiper'
-import { FaCheck, FaTimes } from 'react-icons/fa'
+import { Pagination, Navigation, Autoplay } from 'swiper'
+import { FaCheck, FaTimes, FaPlusSquare } from 'react-icons/fa'
 
 // Import Swiper styles
 import "swiper/css";
@@ -11,8 +11,18 @@ import "swiper/css/pagination";
 import "swiper/css/navigation";
 import { useState } from 'react';
 
+
 function Carousel() {
     const [nav, setNav] = useState(0)
+    const [photoSlide, setPhotoSlide] = useState(false)
+    const [initSlide, setInitSlide] = useState(0)
+    const [programPopUp, setProgramPopUp] = useState(Array(5).fill(false))
+
+    const changeStatePopUp = (index) => {
+        let newState = [...programPopUp]
+        newState.splice(index, 1, !newState[index])
+        setProgramPopUp(newState)
+    }
 
     return (
         <div className="carousel_container">
@@ -71,13 +81,17 @@ function Carousel() {
                     pagination={{
                         clickable: true
                     }}
-                    modules={[Pagination]}
+                    autoplay={{
+                        delay: 3000,
+                        disableOnInteraction: false
+                    }}
+                    modules={[Pagination, Autoplay]}
                     className='carousel_slider'
                 >
                     <SwiperSlide className='carousel_slider_slide'>
                         {({ isActive }) => (
                             isActive ? <>
-                                <img className='carousel_slider_image' src="/assets/image/slide-pk-1.jpg" alt="carousel" />
+                                <img className={`carousel_slider_image ${isActive && 'swiper_zoom_in'}`} src="/assets/image/slide-pk-1.jpg" alt="carousel" />
                                 <div className="carousel_slider_slide_description">
                                     <h1>Amazing tour</h1>
                                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur ut venenatis lorem. Nunc sodales interdum rhoncus. Nulla a leo finibus, ullamcorper lorem vel, scelerisque massa</p>
@@ -90,7 +104,7 @@ function Carousel() {
                     <SwiperSlide className='carousel_slider_slide'>
                         {({ isActive }) => (
                             isActive ? <>
-                                <img className='carousel_slider_image' src="/assets/image/slide-pk-2.jpg" alt="carousel" />
+                                <img className={`carousel_slider_image ${isActive && 'swiper_zoom_in'}`} src="/assets/image/slide-pk-2.jpg" alt="carousel" />
                                 <div className="carousel_slider_slide_description">
                                     <h1>Amazing tour</h1>
                                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur ut venenatis lorem. Nunc sodales interdum rhoncus. Nulla a leo finibus, ullamcorper lorem vel, scelerisque massa</p>
@@ -103,7 +117,7 @@ function Carousel() {
                     <SwiperSlide className='carousel_slider_slide'>
                         {({ isActive }) => (
                             isActive ? <>
-                                <img className='carousel_slider_image' src="/assets/image/slide-pk-3.jpg" alt="carousel" />
+                                <img className={`carousel_slider_image ${isActive && 'swiper_zoom_in'}`} src="/assets/image/slide-pk-3.jpg" alt="carousel" />
                                 <div className="carousel_slider_slide_description">
                                     <h1>Amazing tour</h1>
                                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur ut venenatis lorem. Nunc sodales interdum rhoncus. Nulla a leo finibus, ullamcorper lorem vel, scelerisque massa</p>
@@ -116,7 +130,7 @@ function Carousel() {
                     <SwiperSlide className='carousel_slider_slide'>
                         {({ isActive }) => (
                             isActive ? <>
-                                <img className='carousel_slider_image' src="/assets/image/slide-pk-4.jpg" alt="carousel" />
+                                <img className={`carousel_slider_image ${isActive && 'swiper_zoom_in'}`} src="/assets/image/slide-pk-4.jpg" alt="carousel" />
                                 <div className="carousel_slider_slide_description">
                                     <h1>Amazing tour</h1>
                                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur ut venenatis lorem. Nunc sodales interdum rhoncus. Nulla a leo finibus, ullamcorper lorem vel, scelerisque massa</p>
@@ -196,7 +210,7 @@ function Carousel() {
                         <iframe src="https://www.google.com/maps/d/u/0/embed?mid=19kxW9xBLlc3_i5MiK6XhL507sFY_vGtj&ehbc=2E312F" className='carousel_nav_map_google' title='google_map'></iframe>
                     </div>}
 
-                {nav === 2 &&
+                {nav === 2 && !photoSlide &&
                     <div className="carousel_nav_photos">
                         <Row>
                             <Col md={8} className='d-flex flex-column justify-content-betwee'>
@@ -204,29 +218,154 @@ function Carousel() {
                                     <Col md={12}>
                                         <Row>
                                             <Col md={6}>
-                                                <img src="/assets/image/pack-slide-4.jpg" alt="carousel" className='w-100' />
+                                                <img src="/assets/image/pack-slide-4.jpg" alt="carousel" className='carousel_nav_photos_image' onClick={() => { setPhotoSlide(true); setInitSlide(1) }} />
                                             </Col>
                                             <Col md={6}>
-                                                <img src="/assets/image/pack-slide-1.jpg" alt="carousel" className='w-100' />
+                                                <img src="/assets/image/pack-slide-1.jpg" alt="carousel" className='carousel_nav_photos_image' onClick={() => { setPhotoSlide(true); setInitSlide(0) }} />
                                             </Col>
                                         </Row>
                                     </Col>
                                     <Col md={12}>
-                                        <img src="/assets/image/pk-sm-1.jpg" alt="carousel" className='w-100 h-100' />
+                                        <img src="/assets/image/pk-sm-1.jpg" alt="carousel" className='carousel_nav_photos_image h-100' onClick={() => { setPhotoSlide(true); setInitSlide(2) }} />
                                     </Col>
                                 </Row>
                             </Col>
                             <Col md={4}>
-                                <img src="/assets/image/pk-sm-2.jpg" alt="carousel" className='w-100 h-100' />
+                                <img src="/assets/image/pk-sm-2.jpg" alt="carousel" className='carousel_nav_photos_image h-100' onClick={() => { setPhotoSlide(true); setInitSlide(3) }} />
                             </Col>
                         </Row>
                     </div>}
 
+                {nav === 2 && photoSlide &&
+                    <div className="carousel_nav_photos">
+                        <Swiper
+                            slidesPerView={'auto'}
+                            spaceBetween={0}
+                            centeredSlides={true}
+                            grabCursor={true}
+                            loop={true}
+                            navigation={true}
+                            modules={[Navigation]}
+                            initialSlide={initSlide}
+                            className='carousel_nav_photo_slider'
+                        >
+                            <SwiperSlide className='carousel_nav_photos_slider_slide'>
+                                {({ isActive }) => (
+                                    isActive && <>
+                                        <img className='carousel_nav_photo_slider_image' src={`/assets/image/pack-slide-1.jpg`} alt="" />
+                                        <FaTimes className='carousel_nav_photo_slider_close' onClick={() => setPhotoSlide(false)} />
+                                        <div className="carousel_nav_photo_slider_description">
+                                            <h1>Project City Photography</h1>
+                                            <h4>Lorem ipsum dolor sit amet, consectetur adipiscing elit</h4>
+                                            <a href='/#'>VIEW MORE</a>
+                                        </div></>
+                                )}
+                            </SwiperSlide>
+                            <SwiperSlide className='carousel_nav_photos_slider_slide'>
+                                {({ isActive }) => (
+                                    isActive && <>
+                                        <img className='carousel_nav_photo_slider_image' src={`/assets/image/pack-slide-4.jpg`} alt="" />
+                                        <FaTimes className='carousel_nav_photo_slider_close' onClick={() => setPhotoSlide(false)} />
+                                        <div className="carousel_nav_photo_slider_description">
+                                            <h1>Amazing Landscapes</h1>
+                                            <h4>Lorem ipsum dolor sit amet, consectetur adipiscing elit</h4>
+                                            <a href='/#'>VIEW MORE</a>
+                                        </div></>
+                                )}
+                            </SwiperSlide>
+                            <SwiperSlide className='carousel_nav_photos_slider_slide'>
+                                {({ isActive }) => (
+                                    isActive && <><img className='carousel_nav_photo_slider_image' src={`/assets/image/pk-sm-1.jpg`} alt="" />
+                                        <FaTimes className='carousel_nav_photo_slider_close' onClick={() => setPhotoSlide(false)} />
+                                        <div className="carousel_nav_photo_slider_description">
+                                            <h1>Travel Experience</h1>
+                                            <h4>Lorem ipsum dolor sit amet, consectetur adipiscing elit</h4>
+                                            <a href='/#'>VIEW MORE</a>
+                                        </div></>
+                                )}
+                            </SwiperSlide>
+                            <SwiperSlide className='carousel_nav_photos_slider_slide'>
+                                {({ isActive }) => (
+                                    isActive && <>
+                                        <img className='carousel_nav_photo_slider_image' src={`/assets/image/pk-sm-2.jpg`} alt="" />
+                                        <FaTimes className='carousel_nav_photo_slider_close' onClick={() => setPhotoSlide(false)} />
+                                        <div className="carousel_nav_photo_slider_description">
+                                            <h1>Project Natural Exploration</h1>
+                                            <h4>Lorem ipsum dolor sit amet, consectetur adipiscing elit</h4>
+                                            <a href='/#'>VIEW MORE</a>
+                                        </div>
+                                    </>
+                                )}
+                            </SwiperSlide>
+                        </Swiper>
+                    </div>}
 
+                {nav === 3 &&
+                    <div className="carousel_nav_program">
+                        <h3>Day by Day</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur ut venenatis lorem. Nunc sodales interdum rhoncus. Nulla a leo finibus, ullamcorper lorem vel, scelerisque massa. Vivamus leo dui, interdum non fermentum eget, laoreet ac lorem. Aliquam a ultricies nisl. Nulla consequat lobortis urna sed cursus. ipsum dolor sit amet, consectetur adipiscing elit consectef lorem vel, scelerisque massa. Vivamus leo dui, interdum non.</p>
+
+                        <div className="carousel_nav_program_list">
+                            <div className="carousel_nav_program_item" >
+                                <div className="d-flex">
+                                    <FaPlusSquare className='carousel_nav_program_item_icon' onClick={() => changeStatePopUp(0)} />
+                                    <span>DAY 1</span> - Departure at the airport and arrival at the hotel
+                                </div>
+                                {programPopUp[0] &&
+                                    <div className="carousel_nav_program_item_popup">
+                                        Lorem commodo lectus at sollicitudin elementum. Sed dolor turpis, condimentum sit amet maximus sit amet, rhoncus non turpis.
+                                    </div>
+                                }
+
+                            </div>
+                            <div className="carousel_nav_program_item">
+                                <div className="d-flex">
+                                    <FaPlusSquare className='carousel_nav_program_item_icon' onClick={() => changeStatePopUp(1)} />
+                                    <span>DAY 2</span> - Visit the main museums and lunch included
+                                </div>
+                                {programPopUp[1] &&
+                                    <div className="carousel_nav_program_item_popup">
+                                        Lorem commodo lectus at sollicitudin elementum. Sed dolor turpis, condimentum sit amet maximus sit amet, rhoncus non turpis.
+                                    </div>
+                                }
+                            </div>
+                            <div className="carousel_nav_program_item">
+                                <div className="d-flex">
+                                    <FaPlusSquare className='carousel_nav_program_item_icon' onClick={() => changeStatePopUp(2)} />
+                                    <span>DAY 3</span> - Excursion in the natural oasis and picnic
+                                </div>
+                                {programPopUp[2] &&
+                                    <div className="carousel_nav_program_item_popup">
+                                        Lorem commodo lectus at sollicitudin elementum. Sed dolor turpis, condimentum sit amet maximus sit amet, rhoncus non turpis.
+                                    </div>
+                                }
+                            </div>
+                            <div className="carousel_nav_program_item">
+                                <div className="d-flex">
+                                    <FaPlusSquare className='carousel_nav_program_item_icon' onClick={() => changeStatePopUp(3)} />
+                                    <span>DAY 4</span> - Excursion in the natural oasis and picnic
+                                </div>
+                                {programPopUp[3] &&
+                                    <div className="carousel_nav_program_item_popup">
+                                        Lorem commodo lectus at sollicitudin elementum. Sed dolor turpis, condimentum sit amet maximus sit amet, rhoncus non turpis.
+                                    </div>
+                                }
+                            </div>
+                            <div className="carousel_nav_program_item">
+                                <div className="d-flex">
+                                    <FaPlusSquare className='carousel_nav_program_item_icon' onClick={() => changeStatePopUp(4)} />
+                                    <span>DAY 5</span> - Lorem ipsum dolor sit amet, consectetur adipiscing
+                                </div>
+                                {programPopUp[4] &&
+                                    <div className="carousel_nav_program_item_popup">
+                                        Lorem commodo lectus at sollicitudin elementum. Sed dolor turpis, condimentum sit amet maximus sit amet, rhoncus non turpis.
+                                    </div>
+                                }
+                            </div>
+                        </div>
+                    </div>}
             </div>
-
-
-        </div>
+        </div >
     )
 }
 

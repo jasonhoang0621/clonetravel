@@ -38,15 +38,34 @@
     .carousel_slider_container {
         margin: auto;
         .carousel_slider {
+            .swiper-pagination {
+                bottom: 95%;
+
+                .swiper-pagination-bullet {
+                    width: 4em;
+                    height: 0.2em;
+                    border-radius: 0;
+                    background-color: white;
+                    margin-left: 1em;
+                }
+            }
+
+            
 
             .carousel_slider_slide {
                 position: relative;
                 height: 35em;
                 width: 60em;
-
+                overflow: hidden;
+                
                 .carousel_slider_image {
                     height: 35em;
                     width: 60em;
+                }
+                
+                .carousel_slider_image.swiper_zoom_in {
+                    animation: zoomIn ease-in 3s;
+                    animation-fill-mode: forwards;
                 }
                 
                 @media (max-width: 1200px) {
@@ -66,7 +85,17 @@
                     color: white;
                     letter-spacing: 0.1em;
                     background: linear-gradient(to bottom, rgba(0,0,0,0) 0%,rgba(0,0,0,0.8) 100%);
-                    animation: swipeUp ease-out 1s;
+                    
+                    h1 {
+                        animation: swipeUp ease-out 1s;
+                    }
+
+                    p {
+                        opacity: 0;
+                        animation: swipeUp ease-out 1s;
+                        animation-fill-mode: forwards;
+                        animation-delay: 0.3s;
+                    }
                 }
             }
         }
@@ -142,9 +171,139 @@
 
         .carousel_nav_photos {
             animation: fadeIn ease-in 0.5s;
-            img {
+            .carousel_nav_photos_image {
+                width: 100%;
                 cursor: pointer;
+
+                &:hover {
+                    animation: bubble ease-in 0.7s;
+                    animation-fill-mode: forwards;
+                }
             }
+
+            .carousel_nav_photo_slider {
+                height: 38em;
+                .swiper-button-next { 
+                    top: 50%;
+                    left: 8em;
+                    color:white;
+                    font-weight: bolder;
+                    
+                    @media (max-width: 1200px) {
+                        left: 5em;
+                    }
+                }
+
+                .swiper-button-prev { 
+                    top: 50%;
+                    left: 5em;
+                    color:white;
+                    font-weight: bolder;  
+                    
+                    @media (max-width: 1200px) {
+                        left: 2em;
+                    }
+                }
+
+                .carousel_nav_photos_slider_slide {
+                    position: relative;
+                    
+                    .carousel_nav_photo_slider_image {
+                        animation: fadeIn ease-out 0.5s;
+                        height: 100%;
+                        width: 100%;
+                        object-fit: cover;
+                        cursor: auto;
+                        filter: brightness(60%)
+                    }
+
+                    .carousel_nav_photo_slider_close {
+                        position: absolute;
+                        top: 0.5em;
+                        right: 1em;
+                        color: white;
+                        font-size: 3em;
+
+                        @media (max-width: 1200px) {
+                            right: 0.5em;
+                        }
+                    }   
+
+                    .carousel_nav_photo_slider_description {
+                        position: absolute;
+                        top: 55%;
+                        left: 5em;
+                        color:white;
+                        width: 30em;
+                        animation: swipeToLeft ease-in 0.5s;
+
+                        @media (max-width: 1200px) {
+                            left: 2em;
+                            width: 25em;
+                        }
+
+                        h1 {
+                            font-weight: bold;
+                        }
+
+                        h4 {
+                            font-weight: normal;
+                            margin-bottom: 1.5em;
+                        }
+                        
+                        a {
+                            color: white;
+                            text-decoration: none;
+                            background-color: rgb(0, 173, 208);
+                            padding: 0.6em 1.5em;
+                            border-radius: 30px;
+
+                            &:hover {
+                                border: 2px solid white;
+                                border-radius: 3px;
+                                background-color: transparent;
+                                transition: 0.3s;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .carousel_nav_program {
+            font-size: 1.1em;
+            color: #9a9a9a;
+
+            h3 {
+                color: #555555;
+                font-weight: bold;
+                margin-bottom: 1em;
+            }
+
+            .carousel_nav_program_list {
+                margin-top: 2em;
+
+                .carousel_nav_program_item {
+                    margin-bottom: 1em;
+                    .carousel_nav_program_item_icon {
+                        color: rgb(247, 101, 112);
+                        font-size: 1.7em;
+                        cursor: pointer;
+                    }
+        
+                    span { 
+                        margin-left: 1em;
+                        margin-right: 0.2em;
+                        font-weight: bold;
+                        color: black;
+                    }
+
+                    .carousel_nav_program_item_popup {
+                        margin: 0.5em 0 0 3em;
+                        animation: topLeft ease-out 1s;
+                    }
+                }   
+            }   
         }
     }
 }
@@ -160,7 +319,7 @@
 
 @keyframes swipeUp {
     from {
-        transform: translateY(30%);
+        transform: translateY(70%);
         opacity: 0;
     }
     to {
@@ -168,3 +327,43 @@
         opacity: 1;
     }
 }
+
+@keyframes swipeToLeft {
+    from {
+        transform: translateX(30%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes zoomIn {
+    from {
+        transform: scale(1);
+    }
+    to {
+        transform: scale(1.1);
+    }
+}
+
+@keyframes bubble  {
+    0%   { transform:scale(1); opacity:0.5}
+     50%  { transform:scale(1.05); opacity:0.8}
+     100% { transform:scale(1.0); opacity:1.0}
+}
+
+@keyframes topLeft {
+    from {
+        transform: translate(-5%, -50%);
+        opacity: 0;
+    }
+    to {
+        transform: translate(0, 0);
+        opacity: 1;
+
+    }
+}
+
+
